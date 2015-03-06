@@ -1,3 +1,6 @@
+require 'uri'
+require 'uri/ssh_git'
+
 require 'git_clone_url/version'
 
 module GitCloneUrl
