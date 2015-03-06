@@ -60,5 +60,103 @@ module GitCloneUrl
         end
       end
     end
+    sub_test_case '.parse git_url' do
+      test 'git_url scheme' do
+        assert do
+          ::GitCloneUrl.parse(git_url).scheme == 'git'
+        end
+      end
+      test 'git_url host' do
+        assert do
+          ::GitCloneUrl.parse(git_url).host == 'github.com'
+        end
+      end
+      test 'git_url path' do
+        assert do
+          ::GitCloneUrl.parse(git_url).path == '/schacon/ticgit.git'
+        end
+      end
+    end
+    sub_test_case '.parse ssh_url' do
+      test 'ssh_url scheme' do
+        assert do
+          ::GitCloneUrl.parse(ssh_url).scheme.nil?
+        end
+      end
+      test 'ssh_url user' do
+        assert do
+          ::GitCloneUrl.parse(ssh_url).user == 'git'
+        end
+      end
+      test 'ssh_url password' do
+        assert do
+          ::GitCloneUrl.parse(ssh_url).password.nil?
+        end
+      end
+      test 'ssh_url userinfo' do
+        assert do
+          ::GitCloneUrl.parse(ssh_url).userinfo == 'git'
+        end
+      end
+      test 'ssh_url host' do
+        assert do
+          ::GitCloneUrl.parse(ssh_url).host == 'github.com'
+        end
+      end
+      test 'ssh_url path' do
+        assert do
+          ::GitCloneUrl.parse(ssh_url).path == '/schacon/ticgit.git'
+        end
+      end
+    end
+    sub_test_case '.parse https_url' do
+      test 'https_url scheme' do
+        assert do
+          ::GitCloneUrl.parse(https_url).scheme == 'https'
+        end
+      end
+      test 'https_url host' do
+        assert do
+          ::GitCloneUrl.parse(https_url).host == 'github.com'
+        end
+      end
+      test 'https_url path' do
+        assert do
+          ::GitCloneUrl.parse(https_url).path == '/schacon/ticgit.git'
+        end
+      end
+    end
+    sub_test_case '.parse https_url_with_userinfo' do
+      test 'https_url_i scheme' do
+        assert do
+          ::GitCloneUrl.parse(https_url_with_userinfo).scheme == 'https'
+        end
+      end
+      test 'https_url_i host' do
+        assert do
+          ::GitCloneUrl.parse(https_url_with_userinfo).host == 'github.com'
+        end
+      end
+      test 'https_url_i path' do
+        assert do
+          ::GitCloneUrl.parse(https_url_with_userinfo).path == '/schacon/ticgit.git'
+        end
+      end
+      test 'https_url_i userinfo' do
+        assert do
+          ::GitCloneUrl.parse(https_url_with_userinfo).userinfo == 'user:pass'
+        end
+      end
+      test 'https_url_i user' do
+        assert do
+          ::GitCloneUrl.parse(https_url_with_userinfo).user == 'user'
+        end
+      end
+      test 'https_url_i password' do
+        assert do
+          ::GitCloneUrl.parse(https_url_with_userinfo).password == 'pass'
+        end
+      end
+    end
   end
 end
