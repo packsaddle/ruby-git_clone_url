@@ -3,10 +3,28 @@
 [![Gem Version](http://img.shields.io/gem/v/git_clone_url.svg?style=flat)](http://badge.fury.io/rb/git_clone_url)
 [![Build Status](http://img.shields.io/travis/packsaddle/ruby-git_clone_url/master.svg?style=flat)](https://travis-ci.org/packsaddle/ruby-git_clone_url)
 
+```ruby
+require 'git_clone_url'
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/git_clone_url`. To experiment with that code, run `bin/console` for an interactive prompt.
+git_url = 'git://github.com/schacon/ticgit.git'
+ssh_url = 'git@github.com:schacon/ticgit.git'
+https_url = 'https://github.com/schacon/ticgit.git'
+https_url_with_userinfo = 'https://user:pass@github.com/schacon/ticgit.git'
 
-TODO: Delete this and the text above, and describe your gem
+GitCloneUrl.parse(git_url)
+#=> #<URI::Generic git://github.com/schacon/ticgit.git>
+#=> {scheme: 'git', host: 'github.com', path: '/schacon/ticgit.git' }
+GitCloneUrl.parse(ssh_url)
+#=> #<URI::SshGit::Generic git@github.com:schacon/ticgit.git>
+#=> {scheme: nil, user: 'git', userinfo: 'git', host: 'github.com', path: '/schacon/ticgit.git' }
+GitCloneUrl.parse(https_url)
+#=> #<URI::HTTPS https://github.com/schacon/ticgit.git>
+#=> {scheme: 'https', host: 'github.com', path: '/schacon/ticgit.git'}
+GitCloneUrl.parse(https_url_with_userinfo)
+#=> #<URI::HTTPS https://user:pass@github.com/schacon/ticgit.git>
+#=> {scheme: 'https', userinfo: 'user:pass', user: 'user', password: 'pass',
+# host: 'github.com', path: '/schacon/ticgit.git'}
+```
 
 ## Installation
 
@@ -23,10 +41,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install git_clone_url
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
