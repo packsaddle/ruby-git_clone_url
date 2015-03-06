@@ -26,6 +26,29 @@ GitCloneUrl.parse(https_url_with_userinfo)
 # host: 'github.com', path: '/schacon/ticgit.git'}
 ```
 
+## Motivation
+
+`URI.parse` and `Addressable::URI.parse`
+can parse https protocol, git protocol and ssh protocol(ssh://git@github.com...),
+but they can not parse 'git@github.com:foo/bar.git' pattern of ssh protocol.
+
+```ruby
+# URI
+url = URI.parse('git@github.com:schacon/ticgit.git')
+URI::InvalidURIError: bad URI(is not URI?): git@github.com:schacon/ticgit.git
+
+# Addressable
+url = Addressable::URI.parse('git@github.com:schacon/ticgit.git')
+#=> #<Addressable::URI:0x3fedf48fb430 URI:git@github.com:schacon/ticgit.git>
+url.path #=> "schacon/ticgit.git"
+url.scheme #=> "git@github.com"
+
+url.host #=> nil
+url.userinfo #=> nil
+url.user #=> nil
+url.port #=> nil
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
