@@ -15,7 +15,7 @@ module GitCloneUrl
 
     def generic_url?(url)
       match = %r{\A(\w*)://}.match(url)
-      !!match
+      !match.nil?
     end
   end
 end
