@@ -29,8 +29,8 @@ GitCloneUrl.parse(https_url_with_userinfo)
 ## Motivation
 
 `URI.parse` and `Addressable::URI.parse`
-can parse https protocol, git protocol and ssh protocol(ssh://git@github.com...),
-but they can not parse 'git@github.com:foo/bar.git' pattern of ssh protocol.
+can parse https protocol, git protocol and ssh protocol(`ssh://git@github.com...`),
+but they can not parse `git@github.com:foo/bar.git` pattern of ssh protocol.
 
 ```ruby
 # URI
