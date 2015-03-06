@@ -12,5 +12,5 @@ GitCloneUrl.parse(ssh_url)
 GitCloneUrl.parse(https_url)
 #=> {scheme: 'https', host: 'github.com', path: '/schacon/ticgit.git'}
 GitCloneUrl.parse(https_url_with_userinfo)
-#=> {scheme: 'https', userinfo: 'user:pass', user: 'user', pass: 'pass',
+#=> {scheme: 'https', userinfo: 'user:pass', user: 'user', password: 'pass',
 # host: 'github.com', path: '/schacon/ticgit.git'}
