@@ -65,7 +65,7 @@ url.port #=> nil
 
 Return `URI` namespaced object.
 E.g. `URI::Generic`, `URI::HTTPS` and `URI::SshGit::Generic`.
-See: [class URI::Generic](http://docs.ruby-lang.org/en/2.2.0/URI/Generic.html) and [class URI::HTTPS](http://docs.ruby-lang.org/en/2.2.0/URI/HTTPS.html)
+See: [class URI::Generic](http://docs.ruby-lang.org/en/2.2.0/URI/Generic.html), [class URI::HTTPS](http://docs.ruby-lang.org/en/2.2.0/URI/HTTPS.html) and [URI::SshGit](https://github.com/packsaddle/ruby-uri-ssh_git).
 
 
 #### git_url
