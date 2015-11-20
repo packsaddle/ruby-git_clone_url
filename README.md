@@ -3,6 +3,15 @@
 [![Gem Version](http://img.shields.io/gem/v/git_clone_url.svg?style=flat)](http://badge.fury.io/rb/git_clone_url)
 [![Build Status](http://img.shields.io/travis/packsaddle/ruby-git_clone_url/master.svg?style=flat)](https://travis-ci.org/packsaddle/ruby-git_clone_url)
 
+> Easy to parse git repository-ish url.
+
+* Parse by [URI.parse](http://ruby-doc.org/stdlib-2.2.3/libdoc/uri/rdoc/URI.html#method-c-parse)
+    * `git://github.com/schacon/ticgit.git`
+    * `https://github.com/schacon/ticgit.git`
+* Parse by [URI::SshGit](https://rubygems.org/gems/uri-ssh_git)
+    * `git@github.com:schacon/ticgit.git`
+
+
 ```ruby
 require 'git_clone_url'
 
@@ -48,6 +57,24 @@ url.userinfo #=> nil
 url.user #=> nil
 url.port #=> nil
 ```
+
+
+## API
+
+### GitCloneUrl.parse(git_url) -> URI::*
+
+Return `URI` namespaced object.
+E.g. `URI::Generic`, `URI::HTTPS` and `URI::SshGit::Generic`.
+See: [class URI::Generic](http://docs.ruby-lang.org/en/2.2.0/URI/Generic.html), [class URI::HTTPS](http://docs.ruby-lang.org/en/2.2.0/URI/HTTPS.html) and [URI::SshGit](https://github.com/packsaddle/ruby-uri-ssh_git).
+
+
+#### git_url
+
+*Required*
+Type: `string`
+
+Git repository-ish url.
+
 
 ## Installation
 
