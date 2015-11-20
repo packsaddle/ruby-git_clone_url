@@ -3,6 +3,15 @@
 [![Gem Version](http://img.shields.io/gem/v/git_clone_url.svg?style=flat)](http://badge.fury.io/rb/git_clone_url)
 [![Build Status](http://img.shields.io/travis/packsaddle/ruby-git_clone_url/master.svg?style=flat)](https://travis-ci.org/packsaddle/ruby-git_clone_url)
 
+> Easy to parse git repository-ish url.
+
+* Parse by [URI.parse](http://ruby-doc.org/stdlib-2.2.3/libdoc/uri/rdoc/URI.html#method-c-parse)
+    * `git://github.com/schacon/ticgit.git`
+    * `https://github.com/schacon/ticgit.git`
+* Parse by [URI::SshGit](https://rubygems.org/gems/uri-ssh_git)
+    * `git@github.com:schacon/ticgit.git`
+
+
 ```ruby
 require 'git_clone_url'
 
