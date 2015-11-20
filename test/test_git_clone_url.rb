@@ -7,11 +7,10 @@ module GitCloneUrl
         !::GitCloneUrl::VERSION.nil?
       end
     end
-    git_url = 'git://github.com/schacon/ticgit.git'
-    ssh_url = 'git@github.com:schacon/ticgit.git'
-    https_url = 'https://github.com/schacon/ticgit.git'
-    https_url_with_userinfo = 'https://user:pass@github.com/schacon/ticgit.git'
+  end
 
+  class TestGitUrl < Test::Unit::TestCase
+    git_url = 'git://github.com/schacon/ticgit.git'
     sub_test_case 'git://' do
       test 'generic_url?' do
         assert do
@@ -21,42 +20,6 @@ module GitCloneUrl
       test 'ssh_git_url?' do
         assert do
           !::GitCloneUrl.ssh_git_url?(git_url)
-        end
-      end
-    end
-    sub_test_case 'git@' do
-      test 'generic_url?' do
-        assert do
-          !::GitCloneUrl.generic_url?(ssh_url)
-        end
-      end
-      test 'ssh_git_url?' do
-        assert do
-          ::GitCloneUrl.ssh_git_url?(ssh_url)
-        end
-      end
-    end
-    sub_test_case 'https://' do
-      test 'generic_url?' do
-        assert do
-          ::GitCloneUrl.generic_url?(https_url)
-        end
-      end
-      test 'ssh_git_url?' do
-        assert do
-          !::GitCloneUrl.ssh_git_url?(https_url)
-        end
-      end
-    end
-    sub_test_case 'https://userinfo@' do
-      test 'generic_url?' do
-        assert do
-          ::GitCloneUrl.generic_url?(https_url_with_userinfo)
-        end
-      end
-      test 'ssh_git_url?' do
-        assert do
-          !::GitCloneUrl.ssh_git_url?(https_url_with_userinfo)
         end
       end
     end
@@ -74,6 +37,22 @@ module GitCloneUrl
       test 'git_url path' do
         assert do
           ::GitCloneUrl.parse(git_url).path == '/schacon/ticgit.git'
+        end
+      end
+    end
+  end
+
+  class TestSshUrl < Test::Unit::TestCase
+    ssh_url = 'git@github.com:schacon/ticgit.git'
+    sub_test_case 'git@' do
+      test 'generic_url?' do
+        assert do
+          !::GitCloneUrl.generic_url?(ssh_url)
+        end
+      end
+      test 'ssh_git_url?' do
+        assert do
+          ::GitCloneUrl.ssh_git_url?(ssh_url)
         end
       end
     end
@@ -109,6 +88,22 @@ module GitCloneUrl
         end
       end
     end
+  end
+
+  class TestHttpsUrl < Test::Unit::TestCase
+    https_url = 'https://github.com/schacon/ticgit.git'
+    sub_test_case 'https://' do
+      test 'generic_url?' do
+        assert do
+          ::GitCloneUrl.generic_url?(https_url)
+        end
+      end
+      test 'ssh_git_url?' do
+        assert do
+          !::GitCloneUrl.ssh_git_url?(https_url)
+        end
+      end
+    end
     sub_test_case '.parse https_url' do
       test 'https_url scheme' do
         assert do
@@ -123,6 +118,22 @@ module GitCloneUrl
       test 'https_url path' do
         assert do
           ::GitCloneUrl.parse(https_url).path == '/schacon/ticgit.git'
+        end
+      end
+    end
+  end
+
+  class TestHttpsUserinfoUrl < Test::Unit::TestCase
+    https_url_with_userinfo = 'https://user:pass@github.com/schacon/ticgit.git'
+    sub_test_case 'https://userinfo@' do
+      test 'generic_url?' do
+        assert do
+          ::GitCloneUrl.generic_url?(https_url_with_userinfo)
+        end
+      end
+      test 'ssh_git_url?' do
+        assert do
+          !::GitCloneUrl.ssh_git_url?(https_url_with_userinfo)
         end
       end
     end
