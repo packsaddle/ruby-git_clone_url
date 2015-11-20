@@ -58,6 +58,24 @@ url.user #=> nil
 url.port #=> nil
 ```
 
+
+## API
+
+### GitCloneUrl.parse(git_url) -> URI::*
+
+Return `URI` namespaced object.
+E.g. `URI::Generic`, `URI::HTTPS` and `URI::SshGit::Generic`.
+See: [class URI::Generic](http://docs.ruby-lang.org/en/2.2.0/URI/Generic.html) and [class URI::HTTPS](http://docs.ruby-lang.org/en/2.2.0/URI/HTTPS.html)
+
+
+#### git_url
+
+*Required*
+Type: `string`
+
+Git repository-ish url.
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
