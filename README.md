@@ -1,7 +1,6 @@
 # GitCloneUrl
 
-[![Gem Version](http://img.shields.io/gem/v/git_clone_url.svg?style=flat)](http://badge.fury.io/rb/git_clone_url)
-[![Build Status](http://img.shields.io/travis/packsaddle/ruby-git_clone_url/master.svg?style=flat)](https://travis-ci.org/packsaddle/ruby-git_clone_url)
+[![Gem version][gem-image]][gem-url] [![Travis-CI Status][travis-image]][travis-url] [![yard docs][docs-image]][docs-url]
 
 > Easy to parse git repository-ish url.
 
@@ -75,6 +74,8 @@ Type: `string`
 
 Git repository-ish url.
 
+*[details][docs-url]*.
+
 
 ## Installation
 
@@ -105,3 +106,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+[travis-url]: https://travis-ci.org/packsaddle/ruby-git_clone_url
+[travis-image]: https://img.shields.io/travis/packsaddle/ruby-git_clone_url/master.svg?style=flat-square&label=build%20%28linux%29
+[gem-url]: https://rubygems.org/gems/git_clone_url
+[gem-image]: http://img.shields.io/gem/v/git_clone_url.svg?style=flat-square
+[docs-url]: http://www.rubydoc.info/gems/git_clone_url
+[docs-image]: https://img.shields.io/badge/yard-docs-blue.svg?style=flat-square
