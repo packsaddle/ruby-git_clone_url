@@ -24,7 +24,7 @@ GitCloneUrl.parse(git_url)
 #=> {scheme: 'git', host: 'github.com', path: '/schacon/ticgit.git' }
 GitCloneUrl.parse(ssh_url)
 #=> #<URI::SshGit::Generic git@github.com:schacon/ticgit.git>
-#=> {scheme: nil, user: 'git', userinfo: 'git', host: 'github.com', path: '/schacon/ticgit.git' }
+#=> {scheme: nil, user: 'git', userinfo: 'git', host: 'github.com', path: 'schacon/ticgit.git' }
 GitCloneUrl.parse(https_url)
 #=> #<URI::HTTPS https://github.com/schacon/ticgit.git>
 #=> {scheme: 'https', host: 'github.com', path: '/schacon/ticgit.git'}

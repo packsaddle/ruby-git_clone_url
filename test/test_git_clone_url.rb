@@ -84,7 +84,7 @@ module GitCloneUrl
       end
       test 'ssh_url path' do
         assert do
-          ::GitCloneUrl.parse(ssh_url).path == '/schacon/ticgit.git'
+          ::GitCloneUrl.parse(ssh_url).path == 'schacon/ticgit.git'
         end
       end
     end
