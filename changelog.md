@@ -1,5 +1,5 @@
-<a name="2.0.0.pre.1"></a>
-# [2.0.0.pre.1](https://github.com/packsaddle/ruby-git_clone_url/compare/v1.0.1...v2.0.0.pre.1) (2015-12-03)
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/packsaddle/ruby-git_clone_url/compare/v1.0.1...v2.0.0) (2015-12-07)
 
 
 ## Breaking change
@@ -37,6 +37,10 @@ behavior.
 * https://github.com/packsaddle/ruby-git_clone_url/issues/6
 * https://github.com/packsaddle/ruby-uri-ssh_git/issues/14
 
+
+
+<a name="2.0.0.pre.1"></a>
+# [2.0.0.pre.1](https://github.com/packsaddle/ruby-git_clone_url/compare/v1.0.1...v2.0.0.pre.1) (2015-12-03)
 
 
 <a name="1.0.1"></a>
