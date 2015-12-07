@@ -15,6 +15,3 @@ before_install:
 notifications:
   email:
     - ogataken@gmail.com
-branches:
-  only:
-    - master
