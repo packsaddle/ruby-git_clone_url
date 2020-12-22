@@ -1,6 +1,6 @@
 # GitCloneUrl
 
-[![Gem version][gem-image]][gem-url] [![Travis-CI Status][travis-image]][travis-url] [![yard docs][docs-image]][docs-url]
+[![Gem version][gem-image]][gem-url] [![CI Status][ci-image]][ci-url] [![yard docs][docs-image]][docs-url]
 
 > Easy to parse git repository-ish url.
 
@@ -107,8 +107,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-[travis-url]: https://travis-ci.org/packsaddle/ruby-git_clone_url
-[travis-image]: https://img.shields.io/travis/packsaddle/ruby-git_clone_url/master.svg?style=flat-square&label=build%20%28linux%29
+[ci-url]: https://circleci.com/gh/packsaddle/ruby-git_clone_url
+[ci-image]: https://img.shields.io/circleci/build/github/packsaddle/ruby-git_clone_url?style=flat-square
 [gem-url]: https://rubygems.org/gems/git_clone_url
 [gem-image]: http://img.shields.io/gem/v/git_clone_url.svg?style=flat-square
 [docs-url]: http://www.rubydoc.info/gems/git_clone_url
