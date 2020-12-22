@@ -4,5 +4,5 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'parse_gemspec-cli'
-gem 'rubocop' if RUBY_VERSION >= '2.0.0'
+gem 'rubocop'
 gem 'yard'
